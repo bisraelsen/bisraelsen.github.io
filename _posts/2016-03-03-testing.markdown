@@ -10,7 +10,7 @@ To add new posts, simply add a file in the `_posts` directory that follows the c
 
 $$ \sum_x \frac{2^3}{x^\infty} $$
 
-Jekyll also offers powerful support for code snippets:
+Jekyll also $x^3/y^2$ offers powerful support for code snippets:
 
 
 ``` ruby
