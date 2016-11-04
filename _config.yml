@@ -3,6 +3,7 @@ title: Brett Israelsen
 description: 'Research Stuff'
 url: 'http://bisraelsen.github.io'
 baseurl: '/bisraelsen.github.io/'
+background_img: '/images/mesh_surf_small.png'
 # google_analytics: 'UA-XXXXXX-X'
 # disqus_shortname: 'your-disqus-name'
 
