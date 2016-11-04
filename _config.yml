@@ -1,8 +1,8 @@
 # Site settings
-title: Jekyll-Uno
+title: Brett Israelsen
 description: 'The personal website of Brett Israelsen'
 url: 'http://bisraelse.github.io'
-baseurl: '/jekyll-uno/'
+baseurl: '/bisraelsen.github.io/'
 # google_analytics: 'UA-XXXXXX-X'
 # disqus_shortname: 'your-disqus-name'
 
