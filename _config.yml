@@ -4,7 +4,7 @@ description: 'Under Construction!!!'
 url: 'http://bisraelsen.githubio/'
 baseurl: '/bisraelsen.github.io/'
 background_img: '/images/mesh_surf_small.png'
-# google_analytics: 'UA-XXXXXX-X'
+google_analytics: 'UA-45808513-2'
 # disqus_shortname: 'your-disqus-name'
 
 author:
