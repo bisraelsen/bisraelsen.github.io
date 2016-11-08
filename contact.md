@@ -4,6 +4,11 @@ title: Contact
 permalink: /contact/
 ---
 
-Contact content goes here.
+Email is by far the easiest was to contact me. You can also try any of the listed accounts on the left. 
 
-My e-mail is [email@something.com](mailto:email@something.com).
+<form method="POST" action="http://formspree.io/brett.israelsen@colorado.edu">
+  <input type="email" name="email" placeholder="Your email">
+  <textarea name="message" placeholder="Your message"></textarea>
+  <button type="submit">Send</button>
+</form>
+

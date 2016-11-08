@@ -13,7 +13,7 @@ pre.highlight code,
   white-space: pre-wrap;
 }
 
-.btn, 
+.btn,
 .navigation__item a {
   margin: 5px 0;
   white-space: nowrap;
@@ -54,3 +54,36 @@ pre.highlight code,
   border: 3px solid #fff;
   border-radius:100%;
 }
+
+input, textarea {
+  font-size: 0.8em;
+  font-family: 'proxima-nova-soft', sans-serif;
+  border: 1px solid #ddd;
+  background: #fff;
+  padding: 0.9em;
+  transition: all 0.3s ease-in-out;
+  width: 100%; }
+  input:focus, textarea:focus {
+    border-color: #2A735B;
+    outline: none;
+    box-shadow: 0 0 5px 1px #359173; }
+
+button, a.button {
+  font-size: 1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  border: 2px solid #359173;
+  color: #359173;
+  background: transparent;
+  line-height: 1em;
+  padding: 0.6em 0.9em;
+  transition: all 0.3s ease-in-out; }
+  button:hover, a.button:hover {
+    border-color: #2A735B;
+    color: #2A735B; }
+    button:hover.emphasis, a.button:hover.emphasis {
+      color: white;
+      background-color: #2A735B; }
+  button[disabled], button[disabled]:hover, a.button[disabled], a.button[disabled]:hover {
+    color: #b0e2d2;
+    border-color: #b0e2d2; }
