@@ -55,6 +55,9 @@ pre.highlight code,
   border-radius:100%;
 }
 
+#formview textarea {
+  height: 10.3em; }
+
 input, textarea {
   font-size: 0.8em;
   font-family: 'proxima-nova-soft', sans-serif;
@@ -67,6 +70,9 @@ input, textarea {
     border-color: #2A735B;
     outline: none;
     box-shadow: 0 0 5px 1px #359173; }
+
+form input, form textarea {
+  margin-bottom: 0.5em; }
 
 button, a.button {
   font-size: 1em;
@@ -87,3 +93,31 @@ button, a.button {
   button[disabled], button[disabled]:hover, a.button[disabled], a.button[disabled]:hover {
     color: #b0e2d2;
     border-color: #b0e2d2; }
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline; }
+
+button,
+input {
+  line-height: normal; }
+
+button,
+select {
+  text-transform: none; }
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer; }
+
+button[disabled],
+input[disabled] {
+  cursor: default; }
