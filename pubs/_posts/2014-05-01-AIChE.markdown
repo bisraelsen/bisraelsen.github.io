@@ -20,7 +20,7 @@ Honestly, I can't even find how to access the paper through AIChE, but here is a
 
 Instead, I recommend looking at the arXiv [pre-print][arxiv] that uses a different data-set than the AIChE paper, but is otherwise identical.
 
-### Citation Information:
+### BibTeX:
 ``` latex
 @article{israelsen2014generalized,
   title={Generalized Laguerre Reduction of the Volterra Kernel for Practical Identification of Nonlinear Dynamic Systems},

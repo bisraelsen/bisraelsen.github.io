@@ -16,7 +16,7 @@ I was involved with this project over the summer. We were developing a tool to h
 The user can manipulate and compose all of these tools and facilities as she sees fit. Alternatively, she can employ CSciBox's automated reasoning engine, which uses artificial intelligence techniques to explore the gamut of age models and cross-dating scenarios automatically. The automated reasoning engine captures the knowledge of expert geoscientists, and can output a description of its reasoning.
 
 
-### Citation Information:
+### BibTeX:
 ``` latex
 @inproceedings{finlinson2015cscibox,
   title={CSciBox: An Intelligent Assistant for Dating Ice and Sediment Cores},
