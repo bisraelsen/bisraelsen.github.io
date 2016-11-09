@@ -1,12 +1,11 @@
 ---
-title:  "Generalized Laguerre Reduction of the Volterra Kernel for Practical Identification of Nonlinear Dynamic Systems"
+title:  "Title of Paper"
 date:   2014-05-05 15:04:23
 comments: false
 category: pubs
-tags: [Laguere, model reduction, system identification, statistical learning, Volterra]
+tags: [Add Tags]
 ---
 #### PDF Link: [pre-print][arxiv]
-
 #### BibTeX:
 ``` TeX
 @article{israelsen2014generalized,
@@ -20,12 +19,9 @@ tags: [Laguere, model reduction, system identification, statistical learning, Vo
 #### Abstract:
 
 > The Volterra series can be used to model a large subset of nonlinear, dynamic systems. A major drawback is the number of coefﬁcients required model such systems. In order to reduce the number of required coefﬁcients, Laguerre polynomials are used to estimate the Volterra kernels. Existing literature proposes algorithms for a ﬁxed number of Volterra kernels, and Laguerre series. This paper presents a novel algorithm for generalized calculation of the ﬁnite order Volterra-Laguerre (VL) series for a MIMO system. An example addresses the utility of the algorithm in practical application.
-{:title="Abstract"}
 
 #### Notes:
-Honestly, I can't even find how to access the paper through AIChE, but here is a link to the [meeting schedule][meeting], and the [presentation][presentation] (if you are interested in paying to hear to ramble).
+Notes if there are any
 
-[meeting]:      https://aiche.confex.com/aiche/s14/webprogram/Session27102.html
-[presentation]: http://www.aiche.org/academy/videos/conference-presentations/generalized-laguerre-reduction-volterra-kernel-practical-identification-mimo-system
 [arxiv]:        https://arxiv.org/abs/1410.0741
 
