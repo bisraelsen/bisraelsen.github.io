@@ -1,9 +1,8 @@
 ---
-layout: categories
 title:  "Volterra-Laguerre Polynomials"
 date:   2014-05-05 15:04:23
 category: pubs
-tags: []
+tags: [Volterra]
 ---
 Conference paper presented at the 2014 AIChE spring meeting in New Orleans, LA.
 
@@ -20,6 +19,16 @@ Don't be too critical, it was my first paper and I wrote it in my spare time whi
 Honestly, I can't even find how to access the paper through AIChE, but here is a link to the [meeting schedule][meeting], and the [presentation][presentation] (if you are interested in paying to hear to ramble).
 
 Instead, I recommend looking at the arXiv [pre-print][arxiv] that uses a different data-set than the AIChE paper, but is otherwise identical.
+
+### Citation Information:
+``` latex
+@article{israelsen2014generalized,
+  title={Generalized Laguerre Reduction of the Volterra Kernel for Practical Identification of Nonlinear Dynamic Systems},
+  author={Israelsen, Brett W and Smith, Dale A},
+  journal={arXiv preprint arXiv:1410.0741},
+  year={2014}
+}
+```
 
 [meeting]:      https://aiche.confex.com/aiche/s14/webprogram/Session27102.html
 [presentation]: http://www.aiche.org/academy/videos/conference-presentations/generalized-laguerre-reduction-volterra-kernel-practical-identification-mimo-system
