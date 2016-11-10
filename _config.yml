@@ -1,8 +1,8 @@
 # Site settings
 title: Brett Israelsen
 description: 'Under Construction!!!'
-url: 'http://bisraelsen.githubio/'
-baseurl: '/bisraelsen.github.io'
+url: 'http://bisraelsen.githubio'
+baseurl: '/bisraelsen.github.io/'
 background_img: '/images/mesh_surf_small.png'
 google_analytics: 'UA-45808513-2'
 disqus_shortname: '@brettisraelsen'
