@@ -4,7 +4,7 @@ title: About
 permalink: /bio/
 ---
 
-I am currently a PhD student in the department of Computer Science at CU, Boulder. I am a member of the COHRINT lab that is advised by [Nisar R. Ahmed][nisar]. I am affiliated with both [C-UAS][cuas] and [RECUV][recuv].
+I am currently a PhD student in the department of Computer Science at CU, Boulder. I am a member of the [COHRINT][cohrint] lab that is advised by Nisar R. Ahmed. I am affiliated with both [C-UAS][cuas] and [RECUV][recuv].
 
 My research focuses on algorithms for human-robot interaction. More specifically, what tools are needed for humans and robots to work together on teams. To that end I use various machine learning algorithms. One key idea I call *circumspective agents*, which is supposed to convey the idea of an agent being able to be introspective *and* extrospective. Or in other words:
 
@@ -16,6 +16,6 @@ A circumspective agent has the tools to analyze and quantify certain properties.
 ---
 Coming soon: my CV
 
-[nisar]: http://www.cohrint.info/
+[cohrint]: http://www.cohrint.info/
 [cuas]:  http://c-uas.byu.edu/
 [recuv]: http://www.colorado.edu/recuv/
