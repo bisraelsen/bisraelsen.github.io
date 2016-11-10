@@ -4,7 +4,7 @@ title: Contact
 permalink: /contact/
 ---
 
-Email is by far the easiest was to contact me. You can also try any of the listed accounts on the left. 
+Email is by far the easiest way to contact me. You can also try any of the listed accounts on the left. 
 
 <form method="POST" action="http://formspree.io/brett.israelsen@colorado.edu">
   <input type="email" name="email" placeholder="Your email">

@@ -13,6 +13,9 @@ My research focuses on algorithms for human-robot interaction. More specifically
 
 A circumspective agent has the tools to analyze and quantify certain properties. Of course, in a team situation, any analysis is only useful if it can be *expressed* to something else in a meaningful way. Specifically, I focus on autonomous agents being able to express their circumspective analysis to humans. As a consequence, I study the interpretability and explainability of different machine learning and artificial intelligence methods.
 
+---
+Coming soon: my CV
+
 [nisar]: http://www.cohrint.info/
 [cuas]:  http://c-uas.byu.edu/
 [recuv]: http://www.colorado.edu/recuv/
