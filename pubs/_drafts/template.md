@@ -1,27 +1,27 @@
 ---
-title:  "Title of Paper"
-date:   2014-05-05 15:04:23
+title:  "title goes here"
+date:   YYYY-MM-FF HH:MM:SS
 comments: false
 category: pubs
-tags: [Add Tags]
+tags: [tags, go, here]
 ---
-#### PDF Link: [pre-print][arxiv]
+> **Abstract**:abstract here
+
+#### PDF Link(s): [pre-print][arxiv], [poster]({{ site.url }}pubs/assets/BayesOpt_poster.pdf).
+
 #### BibTeX:
 ``` TeX
-@article{israelsen2014generalized,
-  title={Generalized Laguerre Reduction of the Volterra Kernel for Practical Identification of Nonlinear Dynamic Systems},
-  author={Israelsen, Brett W and Smith, Dale A},
-  journal={arXiv preprint arXiv:1410.0741},
-  year={2014}
+@article{israelsen2016,
+  title={Hybrid Repeat/Multi-point Sampling for Highly Volatile Objective Functions},
+  author={Israelsen, Brett W and Ahmed, Nisar},
+  journal={BayesOpt Workshop, NIPS},
+  url={https://arxiv.org/abs/1612.03981}
+  year={2016}
 }
 ```
 
-#### Abstract:
-
-> The Volterra series can be used to model a large subset of nonlinear, dynamic systems. A major drawback is the number of coefﬁcients required model such systems. In order to reduce the number of required coefﬁcients, Laguerre polynomials are used to estimate the Volterra kernels. Existing literature proposes algorithms for a ﬁxed number of Volterra kernels, and Laguerre series. This paper presents a novel algorithm for generalized calculation of the ﬁnite order Volterra-Laguerre (VL) series for a MIMO system. An example addresses the utility of the algorithm in practical application.
-
 #### Notes:
-Notes if there are any
+Some preliminary theoretical results from my work on an STTR with the AFRL. This is mostly related to Bayesian optimization theory and not specifically for the aerial dog fighting application.
 
-[arxiv]:        https://arxiv.org/abs/1410.0741
-
+[arxiv]:        https://arxiv.org/abs/1612.03981
+[bayesopt]:	http://bayesopt.com/
