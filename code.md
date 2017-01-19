@@ -11,7 +11,7 @@ He are some links to software I have made and that I find useful.
 * [Julia][julia] -- easy to use like MATLAB, and runs fast like C. I have made (minor) contributions to several packages.
     * [JuliaLang][juliagit] -- the git repo
     * [GaussianProcesses.jl][gps] -- simple GP toolbox
-    * [Mocha.jl][mocha] -- neural network toolbox (similar to caffe
+    * [Mocha.jl][mocha] -- neural network toolbox (similar to caffe)
     * [Graphs.jl][graphs] -- toolbox for building, visualizing, and creating graphs
     * [LightGraphs.jl][lgraphs] -- another graphs toolbox, when you don't need all of the fancy stuff
 
