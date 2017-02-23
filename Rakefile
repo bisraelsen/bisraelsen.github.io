@@ -7,5 +7,4 @@ task :build do
         system "rm -r ../#{GH_PAGES_DIR}/*" unless Dir['../#{GH_PAGES_DIR}/*'].empty?
           system "cp -r _site/* ../#{GH_PAGES_DIR}/"
           system "cd ../#{GH_PAGES_DIR}/"
-          system "git status"
 end
