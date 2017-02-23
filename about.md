@@ -11,7 +11,7 @@ My research focuses on algorithms for human-robot interaction. More specifically
 * Introspective -- Capability to analyze internal processes and capabilities
 * Extrospective -- Capability to analyze external environment and surroundings
 
-A circumspective agent has the tools to analyze and quantify certain properties. Of course, in a team situation, any analysis is severely weakened if it can't be *expressed* to something else in a meaningful way. Consequently, I focus on autonomous agents being able to express their circumspective analysis to humans. As a consequence, I study the interpretability and explainability of different machine learning and artificial intelligence methods.
+A circumspective agent has the tools to analyze and quantify certain properties. Of course, in a team situation, any analysis is severely weakened if it can't be *expressed* to something else in a meaningful way. Consequently, I focus on autonomous agents being able to express their circumspective analysis to humans. As a consequence, I study the interpretability and explainability of different machine learning and artificial intelligence methods. This expression is intended to *calibrate* the trust of human team members.
 
 ---
 Coming soon: my CV
