@@ -12,7 +12,7 @@ I am going to put a few notes here about how I set up my bash environment on Win
 * From [this post](https://github.com/Microsoft/BashOnWindows/issues/637) I found out how to get x windows open
     * basically installed [VcXsrv](https://sourceforge.net/projects/vcxsrv/), added the `VcXsrv` shortcut to the startup folder to automatically start the server on startup
     * add `export DISPLAY=:0.0` to my `.bashrc`
-* The default terminal for `bash.exe` wasn't great so I used [cmder](http://cmder.net/), I used the guide [here](https://gist.github.com/MadLittleMods/0e38f03774fb16e8d698175e505f1f3e) to make `cmder` open up `bash.exe` by default.
+* The default terminal for `bash.exe` wasn't great so I used [wsltty](https://github.com/mintty/wsltty), i'm pretty sure I had to edit the font in the registry because the Powerline fonts are not recognized as momo fonts (I did that a while ago and don't remember the details).
     * I installed the Powerline fonts on Windows and selected those fonts to be used in Cmder
 * I am using auto-hotkey to get my shortcut key functionality that I am missing from stock Windows
     * This is to trigger always on top, which I really like especially when working on my laptop
