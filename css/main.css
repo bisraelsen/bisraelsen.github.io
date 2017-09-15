@@ -1,0 +1,124 @@
+@import url(uno.css);
+@import url(zenburn.css);
+
+/* Modifications */
+
+pre.highlight,
+.highlight pre {
+  padding: 10px;
+  overflow: scroll;
+}
+
+pre.highlight code,
+.highlight pre code {
+  /* white-space: pre-wrap; */
+}
+
+.btn,
+.navigation__item a {
+  margin: 5px 0;
+  white-space: nowrap;
+}
+
+.pagination__page-number {
+  display: inline-block;
+  padding: 10px;
+}
+
+.categories a,
+.tags a {
+  border: 1px solid #e25440;
+  border-radius: 20px;
+  color: #e25440;
+  display: inline-block;
+  font-size: 12px;
+  margin: 5px 0;
+  padding: 5px 10px;
+  text-shadow: none;
+  white-space: nowrap;
+}
+
+.post-meta__tags {
+  font-size: 12px;
+  padding: 0 5px;
+}
+
+.footer__copyright {
+    margin: 0 20px 10px;
+}
+
+.user-image {
+  margin-bottom: 1.2em;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border: 3px solid #fff;
+  border-radius:100%;
+}
+
+#formview textarea {
+  height: 10.3em; }
+
+input, textarea {
+  font-size: 0.8em;
+  font-family: 'proxima-nova-soft', sans-serif;
+  border: 1px solid #ddd;
+  background: #fff;
+  padding: 0.9em;
+  transition: all 0.3s ease-in-out;
+  width: 100%; }
+  input:focus, textarea:focus {
+    border-color: #2A735B;
+    outline: none;
+    box-shadow: 0 0 5px 1px #359173; }
+
+form input, form textarea {
+  margin-bottom: 0.5em; }
+
+button, a.button {
+  font-size: 1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  border: 2px solid #359173;
+  color: #359173;
+  background: transparent;
+  line-height: 1em;
+  padding: 0.6em 0.9em;
+  transition: all 0.3s ease-in-out; }
+  button:hover, a.button:hover {
+    border-color: #2A735B;
+    color: #2A735B; }
+    button:hover.emphasis, a.button:hover.emphasis {
+      color: white;
+      background-color: #2A735B; }
+  button[disabled], button[disabled]:hover, a.button[disabled], a.button[disabled]:hover {
+    color: #b0e2d2;
+    border-color: #b0e2d2; }
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline; }
+
+button,
+input {
+  line-height: normal; }
+
+button,
+select {
+  text-transform: none; }
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer; }
+
+button[disabled],
+input[disabled] {
+  cursor: default; }
