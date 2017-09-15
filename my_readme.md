@@ -12,4 +12,6 @@ Now I'm trying to remember how it all works :-)
     * this is the `master` branch, this is the branch that Github uses to publish the website
     * after running `rake build` in the source directory, changes here need to be committed and pushed.
     
+Notes: I just spent forever trying to get the page to update. I ended up clearing the entire `master` branch and re-pushing the build site. I also had to clear the cache in chrome. After that it worked... maybe I only needed to clear the cache? Probably, but I am not going to try and figure it out again.
+    
 That should be it!
