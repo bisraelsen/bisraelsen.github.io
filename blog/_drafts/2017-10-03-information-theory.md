@@ -11,6 +11,5 @@ Anyway, I saw [this article][1] pop up in my feed the other day, and it inspired
 ---
 
 
-Check out the [Jekyll docs][jekyll] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll’s dedicated Help repository][jekyll-help].
 
 [1]:      https://blog.recast.ai/introduction-information-theory-care/

@@ -4,14 +4,13 @@ title: About
 permalink: /bio/
 ---
 
-I am currently a PhD student in the department of Computer Science at CU, Boulder. I am a member of the [COHRINT][cohrint] lab that is advised by Nisar R. Ahmed. I am affiliated with both [C-UAS][cuas] and [RECUV][recuv].
+I am currently a PhD candidate in the department of Computer Science at CU, Boulder. I am a member of the [COHRINT][cohrint] lab that is advised by Nisar R. Ahmed. I am affiliated with both [C-UAS][cuas] and [RECUV][recuv].
 
-My research focuses on algorithms for human-robot interaction. More specifically, what tools are needed for humans and robots to work together on teams. To that end I use various machine learning algorithms. One key idea I call *circumspective agents*, which is supposed to convey the idea of an agent being able to be introspective *and* extrospective. Or in other words:
+My research focuses on algorithms that compliment human-AI (or human-robot, human-computer,...) interaction. More specifically I ask: How can AI help humans to trust it appropriately (and act accordingly)? I claim that this is one of the fundamental questions being asked by those who investigate interpretable, comprehensible, transparent, and explainable machine learning, as well as human-computer interaction, human-robot interaction, and e-commerce (among many others).
 
-* Introspective -- Capability to analyze internal processes and capabilities
-* Extrospective -- Capability to analyze external environment and surroundings
+My collaborators and I have been investigating what we call "algorithmic assurances". Algorithmic assurances are any feedback that an AI (or robot, computer, machine,...) can provide to a human user in order to calibrate their trust-related behaviors.
 
-A circumspective agent has the tools to analyze and quantify certain properties. Of course, in a team situation, any analysis is severely weakened if it can't be *expressed* to something else in a meaningful way. Consequently, I focus on autonomous agents being able to express their circumspective analysis to humans. As a consequence, I study the interpretability and explainability of different machine learning and artificial intelligence methods. This expression is intended to *calibrate* the trust of human team members.
+More specifically I am investigating different algorithmic assurances that can be used for an autonomous robot that uses a POMDP for decision making. The idea is that these assurances could be reported to the human user in some way in order for them to better understand the capabilities and limitations of the robot. Please see [this paper][survey] for a more detailed discussion.
 
 ---
 Coming soon: my CV
@@ -19,3 +18,4 @@ Coming soon: my CV
 [cohrint]: http://www.cohrint.info/
 [cuas]:  http://c-uas.byu.edu/
 [recuv]: http://www.colorado.edu/recuv/
+[survey]: https://bisraelsen.github.io/2017/Survey/
