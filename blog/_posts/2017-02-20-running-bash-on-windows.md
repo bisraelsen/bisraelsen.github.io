@@ -3,7 +3,7 @@ title:  "Some notes about my setup for running bash on windows"
 date:   2017-02-20 20:04:23
 comments: true
 category: blog
-tags: []
+tags: [Windows Linux Subsystem,bread crumbs]
 ---
 I am going to put a few notes here about how I set up my bash environment on Windows 10.
 
