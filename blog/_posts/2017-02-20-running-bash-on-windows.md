@@ -33,7 +33,7 @@ I am going to put a few notes here about how I set up my bash environment on Win
             Return
     ```
 * I installed tex-live in the lxss using [this](https://github.com/scottkosty/install-tl-ubuntu) script, and had to add the path in my `.bashrc` using:
-    ```PATH:/usr/local/texlive/2016/bin/x86_64-linux/:$PATH
+    ```PATH=/usr/local/texlive/2016/bin/x86_64-linux/:$PATH
     ```
 
 I'll keep trying to add stuff here as I find it. 
