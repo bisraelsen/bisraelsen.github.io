@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>Getting a ROS/Gazebo Docker Instance Up</title>
+  <title>Connecting to Google Cloud Platform Compute Engine</title>
   <meta name="description" content="Perpetually Under Construction...">
   <meta name="author" content="Brett Israelsen">
   <meta name="HandheldFriendly" content="True">
@@ -43,7 +43,7 @@
   <meta name="theme-color" content="#ffffff">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://bisraelsen.github.io///2017/docker/">
+  <link rel="canonical" href="http://bisraelsen.github.io///2018/gcloud-config/">
   <link rel="alternate" type="application/rss+xml" title="Brett Israelsen" href="/feed.xml">
 </head>
 
@@ -167,9 +167,9 @@
         <article class="post-container post-container--single">
   <header class="post-header">
     <div class="post-meta">
-      <time datetime="26 Sep 2017" class="post-meta__date date">26 Sep 2017</time> &#8226; <span class="post-meta__tags">on <a href="/tags/#docker">docker</a> <a href="/tags/#ROS">ROS</a> <a href="/tags/#Gazebo">Gazebo</a> <a href="/tags/#bread crumbs">bread crumbs</a> </span>
+      <time datetime="3 Mar 2018" class="post-meta__date date">3 Mar 2018</time> &#8226; <span class="post-meta__tags">on <a href="/tags/#Google cloud platform">Google cloud platform</a> <a href="/tags/#bread crumbs">bread crumbs</a> </span>
     </div>
-    <h3 class="post-title">Getting a ROS/Gazebo Docker Instance Up</h3>
+    <h3 class="post-title">Connecting to Google Cloud Platform Compute Engine</h3>
     <script type="text/x-mathjax-config">
       MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
     </script>
@@ -179,85 +179,71 @@
   </header>
 
   <section class="post">
-    <p>I am going to document my steps to get a ROS/Gazebo instance running on a (nearly) fresh installation of Xubuntu 16.04 (Xenial). I have decided that I am going to use Docker to do this (or at least investigate using Docker) because it will containerize the environments, which is nice because ROS is extremely invasive (i.e. install a TON of packages), and it will make it easier to pass on/share the work with someone else.</p>
+    <p>I have recently began using Google Cloud Platform for my more demading computing needs. I have really liked it, and find it quite a bit easier to navigate than AWS. Anyway, connecting to the instance via the web browser is very nice, but it is also useful to be able to connect via ssh when I need to transfer files to/from my machine (I know there is a upload/download tool in the browser, but it is very cumbersome for operating on many files). Anyway, the answer to this is to connect directly to the instance via ssh, but there are a few steps to make this work.I</p>
+
+<p>I am assuming you have already created an instance, and now just want to connect to the instance directly from your Ubuntu computer. I have also tried this from WSL (Windows subsystem for Linux), and I suppose it is fairly straight-forward for other linux distributions as well. Following the <code class="highlighter-rouge">Use another SSH client</code> dropdown link from the connect column in the <code class="highlighter-rouge">VM Instances</code> tab of the <code class="highlighter-rouge">Compute Engine</code> screen will point you in the right direction for what you need, but I found the documentation a little difficult to navigate.</p>
 
 <ul>
-  <li>I say “nearly” fresh because I had already installed a few things like Chrome, Gitkraken, Git, Tmux, Neovim, and I compiled Julia v0.6… the reason for writing this is that some libs might already have been installed, but I don’t want to go back and start from <strong>absolute</strong> scratch… if it turns out that this causes problems, then I’ll have to revise.</li>
-</ul>
+  <li>
+    <p>This <a href="https://cloud.google.com/sdk/docs/quickstart-debian-ubuntu">link</a> was especially for finding out how to install the Google Cloud SDK. Basically:</p>
 
-<hr />
-
-<h2 id="installing-docker-on-xenial">Installing Docker on Xenial</h2>
-<p>A couple of notes:</p>
-
-<ul>
-  <li>Also, I tried installing Docker on Windows, but it wouldn’t work because I only have Windows 10 home edition… it isn’t really a problem though because I am just going to use a dedicated workstation for this… it would be interesting to see if I can instll Docker on teh Windows subsystem for Linux… just looked and found <a href="https://blog.jayway.com/2017/04/19/running-docker-on-bash-on-windows/">this post</a> that talks about doing it, but it doesn’t sound very easy (basically need to connect to Docker on Windows from WSL)… basically I don’t care about figuring that out right now.</li>
-  <li>I had a question about how Docker is different from a virtual machine <a href="https://stackoverflow.com/questions/16047306/how-is-docker-different-from-a-normal-virtual-machine">this question</a> on stackoverflow explains a bit about it. Basically they are similar, but Docker has a lighter use of system resources… that is grossly over simplifying so read the stackoverflow answer instead.</li>
-</ul>
-
-<p>OK, so why am I using Docker? I found my way to <a href="https://github.com/osrf/car_demo">this project</a> that mentioned using Docker, and that piqued my interest. As I read more it seemed like Docker could help me to contain my development environment in a way that others could use it, and more easily reproduce what I did. I am still new to this, so it might not be quite like that, but I think it is a step in the right direction. So, here we go.</p>
-
-<ul>
-  <li>I am working through <a href="https://docs.docker.com/get-started/">this</a> tutorial – this has some intuitive explanations about what containers are.</li>
-  <li>I followed <a href="https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/#install-from-a-package">this</a> guide to install Docker from a repository, used the following command to be able to have a consistent version when deploying in different situations
     <ul>
-      <li>This is the command for amd64 builds, the link has other options as well: <code class="highlighter-rouge">sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" </code></li>
-      <li>followed by: <code class="highlighter-rouge">sudo apt-get update</code></li>
-      <li>finally we get a specific version <code class="highlighter-rouge">sudo apt-get install docker-ce=17.06.2~ce-0-ubuntu</code></li>
-      <li>The <code class="highlighter-rouge">docker run hello-world</code> command didn’t work and returned a <code class="highlighter-rouge">permission denied</code> error, so I had to add myself to the <code class="highlighter-rouge">docker</code> group</li>
-    </ul>
-  </li>
-</ul>
-
-<hr />
-
-<h2 id="containers-for-ros-and-gazebo">Containers for ROS and Gazebo</h2>
-<p>After poking around on the internet for a while, it finally occurred to me that I should look to see if anyone had ever tried this with ROS/Gazebo. Someone had!! Even better it was someone working at OSRF, and there was an official <a href="http://www.ros.org/news/2015/08/official-docker-hub-repo-for-ros-and-gazebo.html">post</a> on ros.org (also linked below). Anyway, I am going to learn about Docker so I can set up an image of a ROS/Gazebo setup, and then pass it along to whoever else might be working with me.</p>
-
-<ul>
-  <li>I am going to use <a href="http://www.ros.org/news/2015/08/official-docker-hub-repo-for-ros-and-gazebo.html">this</a> post as a reference for getting the ROS/Gazebo docker, these are available at this <a href="https://hub.docker.com/u/osrf/">link</a>.
-    <ul>
-      <li>So, I headed <a href="https://hub.docker.com/r/osrf/ros/">here</a> to pull the ros image <code class="highlighter-rouge">docker pull osrf/ros:kinetic-desktop-full-xenial</code>, I could have just did <code class="highlighter-rouge">docker pull ros</code> like it says <a href="http://wiki.ros.org/docker/Tutorials/Docker">here</a>, but that wouldn’t have guaranteed the version of ROS that I want, which is the version after the :. As a note: <code class="highlighter-rouge">docker pull &lt;some package&gt;</code>, automatically pulls the <code class="highlighter-rouge">latest</code> tag of the package which can change in time sort of like the <code class="highlighter-rouge">master</code> branch of a git repo. Instead, pulling a specific tag will guarantee a consistent version going forward.</li>
-      <li>And for Gazebo <a href="https://hub.docker.com/r/osrf/gazebo/">here</a> to pull the gazebo image <code class="highlighter-rouge">docker pull osrf/gazebo:gzserverX</code>, we’ll see if that is the right one in a little while (again the part after the : is the tag name).</li>
-      <li>The <code class="highlighter-rouge">osrf/gazebo</code> image contains several different tags; most of them are different <code class="highlighter-rouge">gzweb</code> versions. I have been reading a bit about <code class="highlighter-rouge">gzweb</code>, which is basically a version of <code class="highlighter-rouge">gzclient</code> that can be accessed through a browser. It still isn’t clear if it has ALL of the capabilities of <code class="highlighter-rouge">gzclient</code>. However, both <code class="highlighter-rouge">gzclient</code> and <code class="highlighter-rouge">gzweb</code> rely on <code class="highlighter-rouge">gzserver</code> for the actual data, so maybe they are nearly the same… time will tell.</li>
-    </ul>
-  </li>
-</ul>
-
-<hr />
-
-<h2 id="viewing-the-gui-from-a-container">Viewing the GUI from a container</h2>
-
-<p>This is following <a href="http://wiki.ros.org/docker/Tutorials/GUI">this</a> basic tutorial. Basically, we need to connect a container to the host’s (the actual computer) X server.</p>
-
-<ul>
-  <li>I decided to use “The simple way”, by adding the code to open the xhost to the specific container id</li>
-</ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>docker run -it \
-    --env="DISPLAY" \
-    --env="QT_X11_NO_MITSHM=1" \
-    --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
-    osrf/ros:indigo-desktop-full \
-    rqt
-export containerId=$(docker ps -l -q)
-xhost +local:`docker inspect --format='' $containerId`
-docker start $containerId
+      <li>
+        <div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Create an environment variable for the correct distribution</span>
+<span class="nb">export </span><span class="nv">CLOUD_SDK_REPO</span><span class="o">=</span><span class="s2">"cloud-sdk-</span><span class="k">$(</span>lsb_release -c -s<span class="k">)</span><span class="s2">"</span>
+<span class="c"># Add the Cloud SDK distribution URI as a package source</span>
+<span class="nb">echo</span> <span class="s2">"deb http://packages.cloud.google.com/apt </span><span class="nv">$CLOUD_SDK_REPO</span><span class="s2"> main"</span> | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+<span class="c"># Import the Google Cloud Platform public key</span>
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+<span class="c"># Update the package list and install the Cloud SDK</span>
+sudo apt-get update <span class="o">&amp;&amp;</span> sudo apt-get install google-cloud-sdk
 </code></pre>
-</div>
+        </div>
+      </li>
+    </ul>
+  </li>
+  <li>Once that is done, then follow the instructions for initializing the SDK, which are lower on that same page.</li>
+  <li>For some reason the VM that I created on GCP made a user name that was <code class="highlighter-rouge">firstname_lastname</code>, however when I try to connect using the default settings from the SDK it logs in to the VM using the user <code class="highlighter-rouge">firstname</code>. I found after some diffing that you can specify what user with the following command:
+  <code class="highlighter-rouge">bash
+  gcloud compute ssh [user name]@[instance name]
+ </code></li>
+  <li>auto mounting other volumes
+    <ul>
+      <li>add <code class="highlighter-rouge">/deb/sdb /home/user/mount_folder</code> to <code class="highlighter-rouge">/etc/fstab</code></li>
+    </ul>
+  </li>
+  <li>Can upload/download files via:
+    <ul>
+      <li><a href="https://cloud.google.com/sdk/gcloud/reference/compute/scp">scp</a> <code class="highlighter-rouge">gcloud compute scp USER@instance:/file/to/copy /path/to/place/copy</code></li>
+      <li><a href="https://cloud.google.com/storage/docs/gsutil/commands/rsync">rsync</a> <code class="highlighter-rouge">gsutil rsync FOLDER gs://example-bucket/DESTINATION</code></li>
+      <li><a href="https://github.com/GoogleCloudPlatform/gcsfuse/blob/master/docs/mounting.md">mount bucket by hand</a> <code class="highlighter-rouge">gcsfuse example-bucket /path/to/mount/point</code>, and unmount via <code class="highlighter-rouge">fusermount -u /path/to/mount/point</code></li>
+    </ul>
+  </li>
+</ul>
+
 <hr />
-
-<h2 id="letting-ros-access-nvidia-drivers">Letting ROS access Nvidia drivers</h2>
-
-<p>I am going to follow <a href="http://wiki.ros.org/docker/Tutorials/Hardware%20Acceleration">this tutorial</a> to do this. I am also using <a href="https://github.com/NVIDIA/nvidia-docker">the readme</a> from the Nvidia-docker github repo.</p>
-
-<p><em>** I am going to leave this alone for now, i’ll come back to this later, I want to get basic functionality up first **</em></p>
+<p>I spent quite a while figuring this out but I think this is a lost cause— it would have been nice</p>
 
 <ul>
-  <li>I needed to install Nvidia drivers using <code class="highlighter-rouge">sudo add-apt-repository ppa:graphics-drivers/ppa</code>, then select the desired driver from the <code class="highlighter-rouge">additional drivers</code> part of the settings menu. The driver must be greater than <code class="highlighter-rouge">340.29</code> according to the install instructions from Nvidia. I chose the latest on the list (this is a ppa with stable drivers) which is <code class="highlighter-rouge">384.90</code>. Then restart the computer.</li>
-  <li>There are also <a href="https://github.com/NVIDIA/nvidia-docker/wiki/CUDA#requirements">CUDA containers</a>.</li>
-  <li>Now, according to the Nvidia-docker readme run <code class="highlighter-rouge">wget -P /tmp https://github.com/NVIDIA/nvidia-docker/releases/download/v1.0.1/nvidia-docker_1.0.1-1_amd64.deb
-sudo dpkg -i /tmp/nvidia-docker*.deb &amp;&amp; rm /tmp/nvidia-docker*.deb</code></li>
+  <li>Connecting VM to a Cloud Storage Bucket. Use <a href="https://cloud.google.com/compute/docs/instances/transfer-files#gcstransfer">this link</a> and this <a href="https://cloud.google.com/storage/docs/gcs-fuse">link</a>
+    <ul>
+      <li>Need to set the <code class="highlighter-rouge">Storage</code> access to <code class="highlighter-rouge">Full</code> in the cloud API access scopes</li>
+      <li>Now you can create a directory on your VM and then connect it to the storage bucket by
+  <code class="highlighter-rouge">bash
+  gcsfuse example-bucket /path/to/mount
+ </code></li>
+      <li>In order to mount the bucket automatically on startup I tried to use <a href="https://github.com/GoogleCloudPlatform/gcsfuse/blob/master/docs/mounting.md">this link</a>, <code class="highlighter-rouge">uid</code> and/or <code class="highlighter-rouge">gid</code> can be obtained by <code class="highlighter-rouge">id -u USER</code> and <code class="highlighter-rouge">id -g USER</code> respectively. <code class="highlighter-rouge">uid</code> and/or <code class="highlighter-rouge">gid</code> can be used (both don’t have to be used).
+  <code class="highlighter-rouge">bash
+  example-bucket /mount/point gcsfuse rw,uid=1001,gid=1001
+ </code>
+  This approach DID NOT work. I also tried adding a startup script, but it didn’t work either. It seems like the startup script is running with sudo permissions, which messes up <code class="highlighter-rouge">gcsfuse</code>. I found another thread [here][auto-mount] that gives another method
+        <ul>
+          <li>add <code class="highlighter-rouge">example-bucket /mount/point gcsfuse rw,noauto,user</code> to <code class="highlighter-rouge">/etc/fstab</code></li>
+          <li>then add <code class="highlighter-rouge">mount example-bucket</code> to <code class="highlighter-rouge">/etc/rc.local</code></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 </ul>
 
 
@@ -286,8 +272,8 @@ s.setAttribute('data-timestamp', +new Date());
 
     <script type="text/javascript">
       var disqus_config = function () {
-        this.page.url = 'http://bisraelsen.github.io//2017/docker/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = '/2017/docker'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'http://bisraelsen.github.io//2018/gcloud-config/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = '/2018/gcloud-config'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
       };
 
       (function() { // DON'T EDIT BELOW THIS LINE
