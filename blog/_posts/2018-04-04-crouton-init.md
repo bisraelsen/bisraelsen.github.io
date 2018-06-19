@@ -10,7 +10,7 @@ Some directions on what I did to set up Crouton on my Pixelbook
 
 There are a couple other nice things:
 
-* For some reason I needed to fix the locale on the xenail machine. This involved following directions from [this post][1]
+* For some reason I needed to fix the locale on the xenial machine. This involved following directions from [this post][1]
 
 ```bash
 sudo apt-get install locales    
@@ -27,7 +27,10 @@ select the en_US.UTF-8, and that worked for me
 * I needed to `sudo apt-get install bash-completion` to get autocompletion to work for things like `apt-get install`.
 * I manually installed the `Hack` Nerd font to get special characters (i.e. powerline). Download the font from [here][3]
 * I got tired of typing `sudo startxiwi xfce4-terminal` all the time so I added an alias to the crouton shell in the `.bashrc`. When opening the crouton shell from the chroot it automatically enters the root directory. In order to get to the home directory just type `cd`. That changes the terminal prompt from `chronos@localhost / $` to `chronos@localhost ~ $`. Once there add `alias xterm="sudo startxiwi xfce4-terminal"` to the `.bashrc` file. Next time just type `xterm` once in the shell and you just saved yourself a bunch of typing.
+* Having a bunch of issues with neovim in the terminal and tmux. After looking around I decided to compile and use a later version of xfce4-terminal form [here][4]. [This page][5] has a list of terminals that support full color, which might also be good options.
 
 [1]: https://github.com/dnschneid/crouton/issues/74
 [2]: https://www.theverge.com/2017/11/16/16656420/google-pixelbook-chromebook-development-linux-crouton-how-to
 [3]: https://nerdfonts.com/
+[4]: https://github.com/xfce-mirror/xfce4-terminal
+[5]: https://gist.github.com/XVilka/8346728
