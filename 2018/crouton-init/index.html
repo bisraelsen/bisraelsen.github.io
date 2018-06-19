@@ -188,7 +188,7 @@
 <p>There are a couple other nice things:</p>
 
 <ul>
-  <li>For some reason I needed to fix the locale on the xenail machine. This involved following directions from <a href="https://github.com/dnschneid/crouton/issues/74">this post</a></li>
+  <li>For some reason I needed to fix the locale on the xenial machine. This involved following directions from <a href="https://github.com/dnschneid/crouton/issues/74">this post</a></li>
 </ul>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install locales    
@@ -208,6 +208,7 @@ multiple. make sure to <span class="k">select </span>ok, by navigating with tab.
   <li>I needed to <code class="highlighter-rouge">sudo apt-get install bash-completion</code> to get autocompletion to work for things like <code class="highlighter-rouge">apt-get install</code>.</li>
   <li>I manually installed the <code class="highlighter-rouge">Hack</code> Nerd font to get special characters (i.e. powerline). Download the font from <a href="https://nerdfonts.com/">here</a></li>
   <li>I got tired of typing <code class="highlighter-rouge">sudo startxiwi xfce4-terminal</code> all the time so I added an alias to the crouton shell in the <code class="highlighter-rouge">.bashrc</code>. When opening the crouton shell from the chroot it automatically enters the root directory. In order to get to the home directory just type <code class="highlighter-rouge">cd</code>. That changes the terminal prompt from <code class="highlighter-rouge">chronos@localhost / $</code> to <code class="highlighter-rouge">chronos@localhost ~ $</code>. Once there add <code class="highlighter-rouge">alias xterm="sudo startxiwi xfce4-terminal"</code> to the <code class="highlighter-rouge">.bashrc</code> file. Next time just type <code class="highlighter-rouge">xterm</code> once in the shell and you just saved yourself a bunch of typing.</li>
+  <li>Having a bunch of issues with neovim in the terminal and tmux. After looking around I decided to compile and use a later version of xfce4-terminal form <a href="https://github.com/xfce-mirror/xfce4-terminal">here</a>. <a href="https://gist.github.com/XVilka/8346728">This page</a> has a list of terminals that support full color, which might also be good options.</li>
 </ul>
 
 
