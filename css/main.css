@@ -23,12 +23,17 @@ pre.highlight code,
 .navigation--social {
   display: block;
   clear: both;
+  text-align: center;
   margin: 12px 0 0;
 }
 
 .navigation--social .navigation {
   float: none;
-  display: block;
+  display: inline-block;
+}
+
+.navigation-wrapper {
+  text-align: center;
 }
 
 .pagination__page-number {
