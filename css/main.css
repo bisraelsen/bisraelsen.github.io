@@ -20,6 +20,12 @@ pre.highlight code,
   white-space: nowrap;
 }
 
+.navigation--social {
+  display: block;
+  clear: both;
+  margin: 12px 0 0;
+}
+
 .pagination__page-number {
   display: inline-block;
   padding: 10px;
