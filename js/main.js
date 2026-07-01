@@ -29,4 +29,13 @@ $(document).ready(function () {
     $('.btn-mobile-menu__icon').toggleClass('icon-list icon-x-circle animated fadeIn')
   })
 
+  $('[data-email-contact]').click(function (e) {
+    e.preventDefault()
+    var address = String.fromCharCode(
+      98, 114, 101, 116, 116, 46, 105, 115, 114, 97, 101, 108, 115, 101,
+      110, 64, 103, 109, 97, 105, 108, 46, 99, 111, 109
+    )
+    window.location.href = 'mailto:' + address
+  })
+
 })
